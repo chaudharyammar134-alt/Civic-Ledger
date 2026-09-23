@@ -1,0 +1,21 @@
+# Runtime dependencies for the Pothole Tracker backend.
+# The web/API layer itself is pure Python stdlib (http.server) — these are
+# only needed for the computer-vision verification pipeline.
+opencv-python>=4.8
+numpy>=1.24
+Pillow>=10.0
+scikit-image>=0.21
+
+# Lightweight inference-only runtime for the trained pothole-detection model
+# (backend/pothole_ml_detector.py). Deliberately NOT torch/ultralytics —
+# those are only needed to *train* the model (see ml/requirements-ml.txt),
+# never to serve it. If no trained model has been exported yet, this is
+# simply unused and the app falls back further down the chain.
+onnxruntime>=1.16
+
+# Real, pre-trained HOG+SVM pothole detector (backend/pothole_svm_detector.py)
+# — ships trained (backend/ml_models/pothole_hog_svm.joblib), no training
+# step required to use it. scikit-learn is needed at load time too, since
+# it's what the saved model object is unpickled with.
+scikit-learn>=1.3
+joblib>=1.3

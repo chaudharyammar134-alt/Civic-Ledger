@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Civic Ledger — Public Works Tracker</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<div class="letterhead">
+  <div class="letterhead-inner">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-name">Civic Ledger</span>
+      <span class="brand-sub">Public Works Repair Tracker</span>
+    </div>
+    <nav class="nav" id="nav-slot"></nav>
+  </div>
+</div>
+
+<main>
+  <h1>Every reported pothole, tracked in the open.</h1>
+  <p>File a complaint, watch it move through assignment and repair, and see the
+     exact evidence — location match, background landmarks, and photo authenticity
+     checks — behind every "verified" or "rejected" outcome. Nothing sits invisibly
+     in a queue; every status change below is public.</p>
+
+  <div class="stats-strip" id="stats-strip">
+    <div class="stat"><span class="n">—</span><span class="lbl">total filed</span></div>
+    <div class="stat"><span class="n">—</span><span class="lbl">assigned / under review</span></div>
+    <div class="stat"><span class="n">—</span><span class="lbl">verified fixed</span></div>
+    <div class="stat"><span class="n">—</span><span class="lbl">rejected</span></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="filters" id="filters">
+        <button data-status="" class="active">All</button>
+        <button data-status="reported">Reported</button>
+        <button data-status="assigned">Assigned</button>
+        <button data-status="disputed">Needs review</button>
+        <button data-status="verified">Verified</button>
+        <button data-status="rejected">Rejected</button>
+      </div>
+      <div class="case-grid" id="case-grid">
+        <p class="hint">Loading complaints…</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel">
+        <h3>Live activity feed</h3>
+        <p class="hint" style="margin-top:-0.5rem">Every status change, across every complaint, in order.</p>
+        <ul class="timeline" id="activity-feed"></ul>
+      </div>
+      <a class="btn btn-yellow" href="/report.html" style="display:block;text-align:center">Report a pothole</a>
+    </div>
+  </div>
+</main>
+
+<footer>Civic Ledger is a public-transparency demo platform. Verification results are computer-generated signals, reviewed by municipal staff — see each case for the full evidence trail.</footer>
+
+<script src="/assets/api.js"></script>
+<script src="/assets/track.js"></script>
+</body>
+</html>

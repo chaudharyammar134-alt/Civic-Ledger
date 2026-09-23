@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — Civic Ledger</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<div class="letterhead">
+  <div class="letterhead-inner">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-name">Civic Ledger</span>
+      <span class="brand-sub">Public Works Repair Tracker</span>
+    </div>
+    <nav class="nav" id="nav-slot"></nav>
+  </div>
+</div>
+
+<main>
+  <h1>Admin — all complaints</h1>
+  <p>Assign new complaints to contractors, and resolve anything flagged for manual review
+     or disputed by a citizen. Every action here is logged to the public timeline.</p>
+
+  <div class="filters" id="filters">
+    <button data-status="" class="active">All</button>
+    <button data-status="reported">Reported — needs assignment</button>
+    <button data-status="assigned">Assigned</button>
+    <button data-status="disputed">Needs review</button>
+    <button data-status="rejected">Rejected — can reassign</button>
+    <button data-status="verified">Verified</button>
+  </div>
+
+  <div style="overflow-x:auto">
+    <table class="data-table" id="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th><th>Status</th><th>Category</th><th>Description</th>
+          <th>Filed</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="admin-tbody">
+        <tr><td colspan="6" class="hint">Loading…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel" style="margin-top:2rem">
+    <h3>Contractor track record</h3>
+    <p class="hint" style="margin-top:-0.4rem">Rejection rate and "gaming attempt" count (right location/angle, but no
+       actual repair visible) across every job each contractor has submitted — the pattern a single job can't show.</p>
+    <div style="overflow-x:auto">
+      <table class="data-table" id="contractors-table">
+        <thead>
+          <tr><th>Contractor</th><th>Jobs submitted</th><th>Rejected</th><th>Gaming flags</th><th>Risk</th></tr>
+        </thead>
+        <tbody id="contractors-tbody">
+          <tr><td colspan="5" class="hint">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<script src="/assets/api.js"></script>
+<script src="/assets/admin.js"></script>
+</body>
+</html>

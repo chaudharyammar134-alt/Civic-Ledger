@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report a pothole — Civic Ledger</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<div class="letterhead">
+  <div class="letterhead-inner">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-name">Civic Ledger</span>
+      <span class="brand-sub">Public Works Repair Tracker</span>
+    </div>
+    <nav class="nav" id="nav-slot"></nav>
+  </div>
+</div>
+
+<main style="max-width:640px">
+  <h1>Report a pothole</h1>
+  <p>Take a clear photo of the pothole itself. Your device's location is attached
+     automatically — this is the same location the eventual repair photo will be
+     checked against, so the platform can prove the fix happened at the right spot.</p>
+
+  <div id="banner-slot"></div>
+
+  <form id="report-form">
+    <div class="field">
+      <label>Photo of the pothole</label>
+      <div class="photo-capture">
+        <img id="preview" class="preview" style="display:none">
+        <input type="file" id="photo" accept="image/*" capture="environment" required>
+        <p class="hint" style="margin-top:0.6rem">Use your camera to take a photo right now — photos picked from your gallery are flagged and likely to be rejected.</p>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Location</label>
+      <div class="geo-status" id="geo-status">Requesting device location…</div>
+    </div>
+
+    <div class="field">
+      <label for="category">Category</label>
+      <select id="category">
+        <option value="pothole">Pothole</option>
+        <option value="waterlogging">Waterlogging</option>
+        <option value="streetlight">Broken streetlight</option>
+        <option value="garbage">Garbage / debris</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="address">Nearest landmark / address (optional)</label>
+      <input type="text" id="address" placeholder="e.g. Outside 42 MG Road, next to the bus stop">
+    </div>
+
+    <div class="field">
+      <label for="description">Description</label>
+      <textarea id="description" rows="4" required placeholder="How big is it, how long has it been there, any safety risk?"></textarea>
+    </div>
+
+    <button type="submit" class="btn-yellow" id="submit-btn" style="width:100%">Submit complaint</button>
+  </form>
+</main>
+
+<script src="/assets/api.js"></script>
+<script src="/assets/report.js"></script>
+</body>
+</html>

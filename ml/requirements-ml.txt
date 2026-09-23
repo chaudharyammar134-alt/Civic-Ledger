@@ -1,0 +1,8 @@
+# Only needed to TRAIN or EXPORT the pothole-detection model (ml/train.py,
+# ml/export_onnx.py). The deployed server does NOT need these — it only
+# needs `onnxruntime`, which is already in the main ../requirements.txt.
+#
+# Install on your own machine (ideally with a GPU):
+#   pip install -r ../requirements.txt -r requirements-ml.txt
+ultralytics>=8.2
+torch>=2.1

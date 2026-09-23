@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in — Civic Ledger</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<div class="letterhead">
+  <div class="letterhead-inner">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-name">Civic Ledger</span>
+      <span class="brand-sub">Public Works Repair Tracker</span>
+    </div>
+    <nav class="nav" id="nav-slot"></nav>
+  </div>
+</div>
+
+<main>
+  <div class="card">
+    <div class="tabs" id="mode-tabs">
+      <button data-mode="login" class="active">Log in</button>
+      <button data-mode="register">Create account</button>
+    </div>
+
+    <div id="banner-slot"></div>
+
+    <div id="register-role-slot" class="role-tabs" style="display:none">
+      <button data-role="citizen" class="active">I'm a citizen</button>
+      <button data-role="contractor">I'm a contractor</button>
+    </div>
+
+    <form id="auth-form">
+      <div class="field" id="name-field" style="display:none">
+        <label for="name">Full name</label>
+        <input type="text" id="name" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" autocomplete="current-password" required minlength="6">
+      </div>
+      <button type="submit" class="btn-yellow" style="width:100%">Log in</button>
+    </form>
+    <p class="hint" style="margin-top:1rem">
+      Admin access is provisioned separately and cannot be self-registered.
+    </p>
+  </div>
+</main>
+
+<script src="/assets/api.js"></script>
+<script src="/assets/auth.js"></script>
+</body>
+</html>
