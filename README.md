@@ -108,16 +108,32 @@ The model training pipeline is available inside the `ml/` directory.
 
 ## 📂 Project Structure
 
+## 📂 Project Structure
+
 ```text
 Civic-Ledger/
-├── backend/       # API, database, authentication, CV verification, ML inference
-├── frontend/      # Citizen, contractor, admin and public interfaces
-├── ml/            # Dataset preparation, training and ONNX export
-├── demo/          # Synthetic before/after images for testing
+├── YOLOV8_TRAINING/      # Standalone YOLOv8 pothole training workflow
+│   ├── train.py
+│   ├── export.py
+│   ├── predict.py
+│   ├── requirements.txt
+│   ├── README.md
+│   └── dataset/
+│       ├── data.yaml
+│       ├── images/
+│       │   ├── train/
+│       │   └── val/
+│       └── labels/
+│           ├── train/
+│           └── val/
+├── backend/              # API, database, auth, CV verification, ML inference
+├── demo/                 # Synthetic before/after images for testing
+├── frontend/             # Citizen, contractor, admin and public interfaces
+├── ml/                   # Existing ML utilities and training scripts
+├── .gitignore
+├── README.md
 ├── requirements.txt
-├── run.sh
-└── README.md
-```
+└── run.sh
 
 ---
 
